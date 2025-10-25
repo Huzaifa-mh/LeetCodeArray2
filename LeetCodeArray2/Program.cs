@@ -20,7 +20,7 @@
     private static void Main(string[] args)
     {
         int[] array = {1, 3, 5, 6 };
-        int result = SearchInsert(array, 5);
+        int result = SearchInsert(array, 2);
         Console.WriteLine(result);
     }
 }
