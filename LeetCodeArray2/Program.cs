@@ -9,10 +9,13 @@
             {
                 return i;
             }
-            else if (nums[i] < target)
+            else if (nums[i] > target && nums[i - 1] < target)
             {
-                possibleindex = i;
-                continue;
+                return i;
+            }
+            else
+            {
+                possibleindex++;
             }
         }
         return possibleindex;
@@ -20,7 +23,7 @@
     private static void Main(string[] args)
     {
         int[] array = {1, 3, 5, 6 };
-        int result = SearchInsert(array, 2);
+        int result = SearchInsert(array, 4);
         Console.WriteLine(result);
     }
 }
