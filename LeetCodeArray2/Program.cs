@@ -66,5 +66,15 @@
         {
             Console.WriteLine(item);
         }
+
+        string s1 = "123";
+        string s2 = s1 + "456";
+        Console.WriteLine("///");
+
+        int[] num1 = Array.ConvertAll(s2.ToCharArray(), c => (int)char.GetNumericValue(c));
+        foreach (var item in num1)
+        {
+            Console.WriteLine(item);
+        }
     }
 }
