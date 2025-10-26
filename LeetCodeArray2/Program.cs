@@ -28,6 +28,8 @@
             Array.Resize(ref digits, 2);
             digits[0] = 1;
             digits[1] = 0;
+
+            return digits;
         }
         else
         if (digits[len - 1] < 9)
