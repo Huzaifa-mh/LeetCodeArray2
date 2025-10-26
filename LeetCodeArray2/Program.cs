@@ -23,6 +23,13 @@
     public static int[] PlusOne(int[] digits)
     {
         int len = digits.Length;
+        if(len ==1 && digits[0] == 9)
+        {
+            Array.Resize(ref digits, 2);
+            digits[0] = 1;
+            digits[1] = 0;
+        }
+        else
         if (digits[len - 1] < 9)
         {
             digits[len - 1]++;
@@ -44,7 +51,14 @@
         int result = SearchInsert(array, 4);
         Console.WriteLine(result);
 
-        int[] digit = { 9, 2, 9};
+
+        int[] digit = { 9};
+        //Array.Clear(digit, 0, 2);
+        //foreach (var item in digit)
+        //{
+        //    Console.WriteLine(item);
+        //}
+
         int[] output = PlusOne(digit);
         foreach (var item in output)
         {
