@@ -20,10 +20,35 @@
         }
         return possibleindex;
     }
+    public static int[] PlusOne(int[] digits)
+    {
+        int len = digits.Length;
+        if (digits[len - 1] < 9)
+        {
+            digits[len - 1]++;
+            return digits;
+        }
+        else if(digits[len - 1] == 9 && digits[len - 2] < 9)
+        {
+            digits[len - 1] = 0;
+            digits[len - 2]++;
+        }
+
+        return digits;
+    }
+
+                
     private static void Main(string[] args)
     {
         int[] array = {1, 3, 5, 6 };
         int result = SearchInsert(array, 4);
         Console.WriteLine(result);
+
+        int[] digit = { 9, 2, 9};
+        int[] output = PlusOne(digit);
+        foreach (var item in output)
+        {
+            Console.WriteLine(item);
+        }
     }
 }
